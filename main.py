@@ -15,7 +15,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 
-from models import TwoLayerNet, VanillaCNN, MyModel, resnet32
+from models import MyModel
 from losses import FocalLoss, reweight
 
 parser = argparse.ArgumentParser(description='CS7643 Assignment-2 Part 2')
@@ -191,15 +191,10 @@ def main():
     test_loader = torch.utils.data.DataLoader(
         test_dataset, batch_size=100, shuffle=False, num_workers=2)
 
-    if args.model == 'TwoLayerNet':
-        model = TwoLayerNet(3072, 256, 10)
-    elif args.model == 'VanillaCNN':
-        model = VanillaCNN()
-    elif args.model == 'MyModel':
-        model = MyModel()
-    elif args.model == 'ResNet-32':
-        model = resnet32()
-    print(model)
+    
+    model = MyModel()
+    
+    
     if torch.cuda.is_available():
         model = model.cuda()
 
