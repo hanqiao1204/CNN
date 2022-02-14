@@ -8,11 +8,11 @@ Train:
   momentum: 0.9
 
 network:
-  model: MyModel # TwoLayerNet or VanillaCNN or MyModel or ResNet-32
+  model: MyModel 
 
 data:
-  imbalance: regular # regular or imbalance
+  imbalance: regular 
   save_best: True
 
 loss:
-  loss_type: CE # CE or Focal
+  loss_type: CE
